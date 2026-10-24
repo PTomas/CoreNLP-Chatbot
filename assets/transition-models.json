@@ -1,0 +1,172 @@
+[
+    {
+        "name": "greetings-simple-1",
+        "score": 10,
+        "models": [
+            "greetings-negetive",
+            "Negetory",
+            "actions-nouns"
+        ],
+        "transitions": "Arent you working on anything?"
+    },
+    {
+        "name": "greetings-simple-2",
+        "score": 10,
+        "models": [
+            "greetings-negetive",
+            "Affirmative",
+            "actions-nouns"
+        ],
+        "transitions": "Wanna tell me about it?"
+    },
+    {
+        "name": "greetings-initial-1",
+        "score": 10,
+        "models": [
+            "greetings-negetive",
+            "greetings-positive",
+            "getting-to-know-you-negetive"
+        ],
+        "transitions": "Whats on your mind?"
+    },
+    {
+        "name": "greetings-initial-2",
+        "score": 10,
+        "models": [
+            "greetings-negetive",
+            "greetings-negetive",
+            "actions-hobbies-negetive"
+        ],
+        "transitions": "Let me show you my skills."
+    },
+    {
+        "name": "greetings-thoughtful-1",
+        "score": 10,
+        "models": [
+            "greetings-negetive",
+            "actions-personal-negetive",
+            "Affirmative"
+        ],
+        "transitions": "I can help."
+    },
+    {
+        "name": "greetings-actions-1",
+        "score": 10,
+        "models": [
+            "greetings-positive",
+            "Affirmative",
+            "actions-nouns"
+        ],
+        "transitions": "What are we working on today?"
+    },
+    {
+        "name": "greetings-greetings-1",
+        "score": 10,
+        "models": [
+            "greetings-positive",
+            "greetings-positive",
+            "greetings-positive"
+        ],
+        "transitions": "Its a good day right?"
+    },
+    {
+        "name": "greetings-careers-1",
+        "score": 10,
+        "models": [
+            "greetings-positive",
+            "actions-personal-positive",
+            "actions-positive"
+        ],
+        "transitions": "How are things?"
+    },
+    {
+        "name": "greetings-careers-2",
+        "score": 8,
+        "models": [
+            "greetings-positive",
+            "actions-personal-positive",
+            "actions-negetive"
+        ],
+        "transitions": "How are things?"
+    },
+    {
+        "name": "greetings-productive-1",
+        "score": 10,
+        "models": [
+            "greetings-positive",
+            "actions-personal-asertive",
+            "actions-positive"
+        ],
+        "transitions": "Dont forget to keep talking to those girls you can do it I belive in you."
+    },
+    {
+        "name": "greetings-family-1",
+        "score": 10,
+        "models": [
+            "greetings-positive",
+            "actions-personal-negetive",
+            "actions-positive"
+        ],
+        "transitions": "Are you going to keep trying to fix things with your family?"
+    },
+    {
+        "name": "greetings-family-1",
+        "score": 8,
+        "models": [
+            "greetings-positive",
+            "actions-personal-negetive",
+            "actions-negetive"
+        ],
+        "transitions": "Are you going to keep trying to fix things with your family?"
+    },
+    {
+        "name": "discourse-hobbies-1",
+        "score": 8,
+        "models": [
+            "getting-to-know-you-positive",
+            "actions-nouns",
+            "actions-personal-positive"
+        ],
+        "transitions": "I see you like to work on things, have you ever thought about that as a job?"
+    },
+    {
+        "name": "discourse-hobbies-2",
+        "score": 10,
+        "models": [
+            "actions-nouns",
+            "actions-hobbies-negetive",
+            "getting-to-know-you-positive"
+        ],
+        "transitions": "Wow you're good at making things, you've got some skills."
+    },
+    {
+        "name": "discourse-feelings-1",
+        "score": 10,
+        "models": [
+            "getting-to-know-you-positive",
+            "getting-to-know-you-asertive",
+            "actions-positive"
+        ],
+        "transitions": "You have so much isnt living for others a nobel act?"
+    },
+    {
+        "name": "discourse-feelings-2",
+        "score": 10,
+        "models": [
+            "actions-personal-negetive",
+            "actions-nouns",
+            "actions-assertive-positive"
+        ],
+        "transitions": "You can do it, you have so much potential. How are you going to show the people who you really are?"
+    },
+    {
+        "name": "discourse-feelings-2",
+        "score": 10,
+        "models": [
+            "actions-nouns",
+            "actions-personal-negetive",
+            "actions-assertive-positive"
+        ],
+        "transitions": "You can do it, you have so much potential. How are you going to show the people who you really are?"
+    }
+]

@@ -1,0 +1,5 @@
+node_modules/
+piper/
+.venv/
+.env
+reply-*.wav

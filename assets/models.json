@@ -1,0 +1,592 @@
+[
+  {
+    "actions-positive": [
+      {
+        "sentence": "Things have been going well.",
+        "contentType": "actions-positive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "Ive finaly found something to be happy about.",
+        "contentType": "actions-positive",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "Its finally working out for me.",
+        "contentType": "actions-positive",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 10
+      }
+    ],
+    "actions-negetive": [
+      {
+        "sentence": "Its not working out well.",
+        "contentType": "actions-negetive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "I feel trapped or stuck.",
+        "contentType": "actions-negetive",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 1
+      },
+      {
+        "sentence": "Its supposed to",
+        "contentType": "actions-negetive",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "Should I keep trying to solve these problems?",
+        "contentType": "actions-negetive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 10
+      }
+    ],
+    "actions-personal-positive": [
+      {
+        "sentence": "Would you rather work on animations or code?",
+        "contentType": "actions-personal-positive",
+        "type": "interrogative",
+        "currentSet": "1",
+        "score": 5
+      },
+      {
+        "sentence": "I want to get a good job.",
+        "contentType": "actions-personal-positive",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "What am I supposed to do.",
+        "contentType": "actions-personal-positive",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "actions-personal-negetive": [
+      {
+        "sentence": "Do you want to hear about any of the projects Im working on?",
+        "contentType": "actions-personal-negetive",
+        "type": "interrogative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "Should I keep trying to solve these problems?",
+        "contentType": "actions-personal-negetive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "How do I get closer to my family?",
+        "contentType": "actions-personal-negetive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 5
+      }
+    ],
+    "actions-personal-asertive": [
+      {
+        "sentence": "What do I do?",
+        "contentType": "actions-personal-asertive",
+        "type": "interrogative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "Should I go outside or keep working on the computer?",
+        "contentType": "actions-personal-asertive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "I cant decide what to do?",
+        "contentType": "actions-personal-asertive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 5
+      }
+    ],
+    "actions-assertive-positive": [
+      {
+        "sentence": "I will",
+        "contentType": "actions-personal-negetive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "I guess I could try that.",
+        "contentType": "actions-personal-negetive",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "How should I?",
+        "contentType": "actions-personal-negetive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "actions-hobbies-positive": [
+      {
+        "sentence": "It works.",
+        "contentType": "actions-hobbies-negetive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "Its supposed to",
+        "contentType": "actions-hobbies-negetive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "Should I keep trying to fix it?",
+        "contentType": "actions-hobbies-negetive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 10
+      }
+    ],
+    "actions-hobbies-negetive": [
+      {
+        "sentence": "Its didnt work.",
+        "contentType": "actions-hobbies-negetive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "Its supposed to",
+        "contentType": "actions-hobbies-negetive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "Should I keep trying to fix it?",
+        "contentType": "actions-hobbies-negetive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 10
+      }
+    ],
+    "actions-nouns": [
+      {
+        "sentence": "This project  ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "Im working on a ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "Trying to make a ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "Thinking about a ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 5
+      },
+      {
+        "sentence": "Thinking about a ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 5
+      },
+      {
+        "sentence": "Going to talk to ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "Im going to the ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "actions-think": [
+      {
+        "sentence": "Do you think patrick is good.",
+        "contentType": "actions-think",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "Do you think rules are meant to be broken?",
+        "contentType": "actions-think",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "Do you think Patrick is ready to move out?",
+        "contentType": "actions-think",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 10
+      }
+    ],
+    "greetings-positive": [
+      {
+        "sentence": "Hello my name is Patrick?",
+        "contentType": "greetings-positive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "Whats new with you?",
+        "contentType": "greetings-positive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 1
+      },
+      {
+        "sentence": "whats Up?",
+        "contentType": "greetings-positive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 5
+      }
+    ],
+    "greetings-negetive": [
+      {
+        "sentence": "Hello, my name is",
+        "contentType": "greetings-negetive",
+        "type": "interrogative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "Hey, whats up.",
+        "contentType": "greetings-negetive",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "I'm having a bad day.",
+        "contentType": "greetings-negetive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "greetings-asertive": [
+      {
+        "sentence": "What can you do?",
+        "contentType": "greetings-asertive",
+        "type": "interrogative",
+        "currentSet": "1",
+        "score": 5
+      },
+      {
+        "sentence": "I want to get better at life.",
+        "contentType": "greetings-asertive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "I want to know how to fix my life.",
+        "contentType": "greetings-asertive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 5
+      }
+    ],
+    "getting-to-know-you-positive": [
+      {
+        "sentence": "What do you do to relax?",
+        "contentType": "getting-to-know-you-positive",
+        "type": "interrogative",
+        "currentSet": "1",
+        "score": 5
+      },
+      {
+        "sentence": "What skills?",
+        "contentType": "getting-to-know-you-positive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "I love making things.",
+        "contentType": "getting-to-know-you-positive",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "getting-to-know-you-negetive": [
+      {
+        "sentence": "Why do I feel so alone?",
+        "contentType": "getting-to-know-you-negetive",
+        "type": "interrogative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "do you you think I can still make a better life?",
+        "contentType": "getting-to-know-you-negetive",
+        "type": "interrogative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "Do you think Ill ever be happy?",
+        "contentType": "getting-to-know-you-negetive",
+        "type": "interrogative",
+        "currentSet": "3",
+        "score": 5
+      }
+    ],
+    "getting-to-know-you-asertive": [
+      {
+        "sentence": "I feel like I am getting better.",
+        "contentType": "getting-to-know-you-asertive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 5
+      },
+      {
+        "sentence": "I want to know more about my future.",
+        "contentType": "getting-to-know-you-asertive",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 10
+      },
+      {
+        "sentence": "I want a better life.",
+        "contentType": "getting-to-know-you-asertive",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "Negetory": [
+      {
+        "sentence": "No",
+        "contentType": "Negetory",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "No",
+        "contentType": "Negetory",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 1
+      },
+      {
+        "sentence": "No",
+        "contentType": "Negetory",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "Afffirmative": [
+      {
+        "sentence": "Yes",
+        "contentType": "Afffirmative",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "Yes",
+        "contentType": "Afffirmative",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 1
+      },
+      {
+        "sentence": "Yes",
+        "contentType": "Afffirmative",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "self-awareness": [
+      {
+        "sentence": "you",
+        "contentType": "self-awareness",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "youre ?",
+        "contentType": "self-awareness",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "yourself ?",
+        "contentType": "self-awareness",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "discourse-nouns": [
+      {
+        "sentence": "",
+        "contentType": "discourse-nouns",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "",
+        "contentType": "discourse-nouns",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "",
+        "contentType": "discourse-nouns",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "discourse-adjectives": [
+      {
+        "sentence": "",
+        "contentType": "discourse-adjectives",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "",
+        "contentType": "discourse-adjectives",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "",
+        "contentType": "discourse-adjectives",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "discourse-PropNouns": [
+      {
+        "sentence": "",
+        "contentType": "discourse-PropNouns",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "",
+        "contentType": "discourse-PropNouns",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "its",
+        "contentType": "discourse-PropNouns",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+    "discourse-prep-nouns": [
+      {
+        "sentence": "do you like name",
+        "contentType": "discourse-prep-nouns",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "do you like bread",
+        "contentType": "discourse-prep-nouns",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "do you like people",
+        "contentType": "discourse-prep-nouns",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ],
+
+    "discourse-prep-prop": [
+      {
+        "sentence": "do you like Patrick",
+        "contentType": "discourse-prep-prop",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 10
+      },
+      {
+        "sentence": "do you like",
+        "contentType": "discourse-prep-prop",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 5
+      },
+      {
+        "sentence": "",
+        "contentType": "discourse-prep-prop",
+        "type": "declarative",
+        "currentSet": "3",
+        "score": 1
+      }
+    ]
+  }
+]

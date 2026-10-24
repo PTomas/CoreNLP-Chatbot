@@ -1,0 +1,184 @@
+body {
+    background-color: #232423;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.canvas{
+    display: flex;
+}
+
+.lineTracers {
+    background-color: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+.score{
+    height: 100px;
+    width: 200px;
+    font-size: 48px;
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+.modal {
+    width: 500px;
+    height: 750px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-self: center;
+    justify-content: center;
+    background: linear-gradient(180deg, orange 50%, #008b90 50%);    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: column;
+}
+
+.textbox1 {
+    width: 460px;
+    min-height: 520px;
+    max-height: 580px;
+    overflow-y: scroll;
+    align-self: center;
+    justify-content: center;
+    background-color: rgb(48,48,48);
+    border: solid 1px;
+    border-color: gray;
+    border-radius: 3px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.row1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.askBox {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    border: solid 1px;
+    border-color: gray;
+    margin-right: 10px;
+    background-color: white;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card2 {
+    --r: 25px; /* the radius */
+    --t: 25px; /* the size of the tail */
+
+    max-width: 300px;
+    padding: calc(2*var(--r)/3);
+    -webkit-mask: 
+        radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+        var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+        conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+        calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+        radial-gradient(50% 50%,#000 98%,#0000 101%) 
+        0 0/var(--r) var(--r) space padding-box;
+    background: dimgrey border-box;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.card {
+    --r: 25px; /* the radius */
+    --t: 25px; /* the size of the tail */
+
+    max-width: 300px;
+    padding: calc(2*var(--r)/3);
+    -webkit-mask: 
+        radial-gradient(var(--t) at var(--_d) 0,#0000 98%,#000 102%) 
+        var(--_d) 100%/calc(100% - var(--r)) var(--t) no-repeat,
+        conic-gradient(at var(--r) var(--r),#000 75%,#0000 0) 
+        calc(var(--r)/-2) calc(var(--r)/-2) padding-box, 
+        radial-gradient(50% 50%,#000 98%,#0000 101%) 
+        0 0/var(--r) var(--r) space padding-box;
+    background: #1384C5 border-box;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.right {
+    --_d: 100%;
+    border-right: var(--t) solid #0000;
+    margin-left: var(--t);
+    place-self: end;
+}
+
+.left {
+    --_d: 0%;
+    border-left: var(--t) solid #0000;
+    margin-right: var(--t);
+    place-self: start;
+}
+
+.spinner {
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    width: 50px;
+    height: 50px;
+    
+    & .path {
+      stroke: hsl(210, 70, 75);
+      stroke-linecap: round;
+      animation: dash 1.5s ease-in-out infinite;
+    }
+    
+  }
+
+.btn {
+    width: auto;
+    height: auto;
+    border: 2px;
+    border-color: white;
+    border-radius: 10px;
+    font-family: 'Work Sans', sans-serif;
+    background-color: #389dff;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.btn:hover{
+    background-color: #0077ea;
+    color: white;
+}

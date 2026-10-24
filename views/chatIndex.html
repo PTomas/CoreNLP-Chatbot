@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/chatStyle.css">
+    <script type="text/javascript" src="/js/chatScript.js"></script>
+    <title>Chatbot</title>
+</head>
+<body>
+    <p class="score" hidden="true"></p>
+    <div id="chatbot" class="modal"  width="500px" height="750px" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div type="text" class="textbox1" name="textbox1"> 
+            <div class="cardContainer">
+
+            </div>       
+        </div>
+        <form class="form" method="post" action="/" onsubmit="getSendRes(event)">
+            <div class="row1">
+                <input type="text" class="askBox" name="query" placeholder="Ask me anything" contenteditable></input>
+                <button type="submit" class="askBtn">Ask</button>
+            </div>
+        </form>   
+    </div>
+    <canvas class="canvas"></canvas>
+</body>
+</html>
+<script>
+// const askCont = document.querySelector(".row1");
+const askVal = document.querySelector(".askBox");
+const subForm = document.querySelector(".form");
+const cardCont = document.querySelector(".cardContainer")
+
+var cardNum;
+var interval = 1;
+
+window.onload = function(){
+    const canvas = document.querySelector('.canvas');
+    resizeCanvas()
+
+    const ctx = canvas.getContext('2d');
+    ctx.lineWidth = "5";
+    
+    const chatBot = document.getElementById("chatbot");
+   
+    var int = 0
+    function recursiveDraw(x,y){
+       for(let i = 0; i < int; i++){
+        ctx.strokeStyle = `rgb(
+            0
+            ${Math.floor(255 - 42.5 * int)}
+            ${Math.floor(255 - 42.5 * i)})`;
+
+        ctx.beginPath();
+        ctx.moveTo(x+12.5+ int*25, y-50*i)
+        ctx.lineTo(x+12.5+ (int+1)*25, y-50*(i))//top, line accross
+        ctx.moveTo(x+12.5+ int*25,y-50*i)
+        ctx.lineTo(x+12.5+ int*25, y+50*i)//line down
+        ctx.moveTo(x+12.5+ int*25, y+50*i)
+        ctx.lineTo(x+12.5+ (int+1)*25, y+50*(i))//bottom, line accross
+        ctx.stroke()
+       }
+       int++;
+
+        if(int < 8){
+            recursiveDraw((canvas.offsetWidth/2 + chatBot.offsetWidth/2 ), canvas.offsetHeight/2) 
+        }
+    }
+
+    var int2 = 0
+    function recursiveDraw2(x,y){
+       for(let i = 0; i < int2; i++){
+        ctx.strokeStyle = `rgb(
+            0
+            ${Math.floor(255 - 42.5 * int2)}
+            ${Math.floor(255 - 42.5 * i)})`;
+
+        ctx.beginPath();
+        ctx.moveTo(x+12.5- int2*25, y-50*i)
+        ctx.lineTo(x+12.5- (int2+1)*25, y-50*(i))//top, line accross
+        ctx.moveTo(x+12.5- int2*25,y-50*i)
+        ctx.lineTo(x+12.5- int2*25, y+50*i)//line down
+        ctx.moveTo(x+12.5- int2*25, y+50*i)
+        ctx.lineTo(x+12.5- (int2+1)*25, y+50*(i))//bottom, line accross
+        ctx.stroke()
+       }
+       int2++;
+
+        if(int2 < 8){
+            recursiveDraw2((canvas.offsetWidth/2 - chatBot.offsetWidth/2 ), canvas.offsetHeight/2) 
+        }
+    }
+
+    function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    }
+    recursiveDraw((canvas.offsetWidth/2 + chatBot.offsetWidth/2 ), canvas.offsetHeight/2)   
+    recursiveDraw2((canvas.offsetWidth/2 - chatBot.offsetWidth/2 ), canvas.offsetHeight/2)   
+
+   
+}
+
+window.addEventListener("resize", function(){
+    resizeCanvas()
+    recursiveDraw()
+    recursiveDraw2()
+});
+
+
+let cardContainer
+
+// let card = document.createElement('div');
+// card.className = 'card2 left shadow cursor-pointer';
+
+// let title = document.createElement('h5');
+// title.innerText = "password?";
+// title.className = 'card-title';
+
+// cardContainer = document.querySelector(".cardContainer")
+// card.appendChild(title);
+// cardContainer.appendChild(card); 
+
+subForm.addEventListener("submit", function() {
+    var myResponce = askVal.value;
+    let card = document.createElement('div');
+    card.className = 'card right shadow cursor-pointer';
+    
+    let title = document.createElement('h5');
+    title.innerText = myResponce;
+    title.className = 'card-title';
+    
+    cardContainer = document.querySelector(".cardContainer")
+    card.appendChild(title);
+    cardContainer.appendChild(card); 
+
+    // askVal.value = "";
+});
+
+
+async function getSendRes(event) {
+    //prevent reload
+    if (event) event.preventDefault();
+    
+    // send the question, then ask for the answers once the server has it
+    await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: askVal.value })
+    });
+
+    fetch("/answers")
+        .then(response => response.json())
+        .then(async users => { // Added async here to handle awaits inside
+            console.log(users.data);
+            var answers = users.data;
+            var score = users.score;
+            console.log("score: " + score)
+            const cardContainer = document.querySelector(".cardContainer");
+
+             //prime speach
+             let voices = window.speechSynthesis.getVoices();
+            
+            // If voices aren't ready, wait for them
+            if (voices.length === 0) {
+                await new Promise(resolve => {
+                    window.speechSynthesis.onvoiceschanged = () => {
+                        voices = window.speechSynthesis.getVoices();
+                        resolve();
+                    };
+                });
+            }
+
+            let scoreCard = document.querySelector(".score")
+            scoreCard.innerHTML = score;
+            scoreCard.removeAttribute("hidden");
+            setTimeout(() => {
+                scoreCard.setAttribute("hidden", true);
+            }, 5000); // 5 seconds
+
+            // We iterate through answers and trigger speech as each card is made
+            for (const element of answers) {
+                // 1. Create the Visual Card
+                let card = document.createElement('div');
+                card.className = 'card2 left shadow cursor-pointer';
+                let title = document.createElement('h5');
+                title.innerText = element;
+                title.className = 'card-title';
+                card.appendChild(title);
+                cardContainer.appendChild(card);
+                
+                await speak(element); // waits until this answer finishes before the next card
+
+            }
+        });
+
+    return false; 
+}
+
+async function speak(element) {
+  const res = await fetch("/speak", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ text: element })
+  });
+  if (!res.ok) return console.error("speak failed");
+
+  const url = URL.createObjectURL(await res.blob());
+  const audio = new Audio(url);
+  await new Promise(done => {
+    audio.onended = done;
+    audio.onerror = done;
+    audio.play().catch(done);
+  });
+  URL.revokeObjectURL(url);
+}
+/***************************************************************/
+// Play reply.wav and wait until it's done
+// function play(file) {
+//     if (process.platform === "win32") {
+//         // built-in Windows player, no extra installs needed
+//         return run("powershell", [
+//         "-NoProfile",
+//         "-Command",
+//         `(New-Object Media.SoundPlayer '${file}').PlaySync()`
+//         ]);
+//     }
+// }
+
+// Utility function (make sure this is defined in your script)
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+</script>

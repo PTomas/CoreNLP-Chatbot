@@ -1,0 +1,155 @@
+[
+    {
+        "greetings-negetive": {
+          "sentences": [
+            "Its not working out well.",
+            "I feel trapped and stuck",
+            "I'm having a bad day."
+          ],
+          "keywords": ["negetive", "trapped", "bad", "not working out"]
+        },
+        "greetings-positive": {
+          "sentences": [
+            "Its finally working out for me.",
+            "Im finally happy.",
+            "Things have been going well."
+          ],
+          "keywords": ["positive", "working out", "happy", "going well"]
+        },
+        "greetings-asertive":{
+            "sentences":[
+                "What can you do?",
+                "I want to get better at life.",
+                "I want to know how to fix my life.",
+                "do you you think I can still make a better life?"
+            ],
+        "keywords": ["asertive", "what can you do", "get better", "fix my life", "make a better life"]
+
+        }, 
+        "getting-to-know-you-positive":{
+            "sentences":[
+                "What do you do to relax?",
+                "What skills?",
+                "I love making things."
+            ],
+        "keywords": ["positive", "relax", "love", "love making things"]
+
+        },
+        "actions-nouns-make":{
+            "sentences":[
+                "Trying to build a chair",
+                "Trying to build a robot",
+                "Trying to build a chatbot",
+                "Trying to build a stool",
+                "Trying to build a arm",
+                "Trying to build a leg",
+                "Trying to build a table",
+                "Trying to build a car",
+                "Trying to build a jet engine",
+                "Trying to build a spaceship",
+                "Trying to build a rocket",
+                "Trying to build a telescope"
+            ],
+        "keywords": ["make", "project", "chair", "stool", "robot", "robot-arm", "chatbot", "walker", "car", "jet engine", "spaceship", "rocket", "telescope"]
+
+        },
+        "actions-nouns-rocket":{
+            "sentences":[
+                "Trying to make a rocket",
+                "Working on a rocket",
+                "Trying to build a rocket",
+                "Thinking about a rocket",
+                "Thinking about a rocketship"
+            ],
+        "keywords": ["rocket", "rocketship", "rocket engine", "fins", "nose cone", "payload", "fuel", "recovery"]
+
+        },
+        "actions-nouns-robot":{
+            "sentences":[
+                "Trying to make a robot",
+                "Working on a robot",
+                "Trying to build a robot",
+                "Thinking about robots"
+            ],
+        "keywords": ["robot", "robot arm", "bipedal robot", "humanoid robot", "wheeled", "legs", "arms", "wheels", "batteries", "sensors", "microcontroller", "motors", "servo motors", "robot chassis"]
+
+        },
+        "actions-nouns-chair":{
+            "sentences":[
+                "Trying to make a chair",
+                "Working on a chair",
+                "Trying to build a chair",
+                "Thinking about chairs"
+            ],
+        "keywords": ["chair", "back", "seat", "legs", "arm rest", "cup holders"]
+
+        },
+        "actions-nouns-movies":{
+            "sentences":[
+                "I want to go to the movies",
+                "I saw a movie",
+                "I want to watch a movie",
+                "Thinking about movies"
+            ],
+        "keywords": ["movie", "movies", "good", "favorite", "what"]
+
+        },
+        "actions-nouns-talk-superior":{
+            "sentences":[
+                "Going to talk to a leader",
+                "Going to talk to a Congressman",
+                "Going to talk to a Senator",
+                "Going to talk to a Postman",
+                "Going to talk to my boss",
+                "Going to talk to my Mom",
+                "Going to talk to my Dad"
+            ],
+            "keywords": ["superior", "leader", "congressman", "senator", "postman", "boss", "mom", "dad"]
+        },
+        "actions-nouns-talk-equal":{
+            "sentences":[
+                "Going to talk to a Girl",
+                "Going to talk to a Friend"
+            ],
+        "keywords": ["equal", "girl", "friend"]
+
+        },
+        "actions-nouns-places": {
+            "sentences":[
+                "Im going to the Park",
+                "Im going to the hangout with my Sister",
+                "Im going to the DisnyLand",
+                "Im going to the the Beach",
+                "Im going to the my Grandpas house"
+            ],
+        "keywords": ["places", "park", "hangout", "sister", "disneyland", "beach", "grandpas house"]
+        },
+        "actions-personal-negetive":{
+            "sentences":[
+                "How do I get closer to my family?",
+                "Should I keep trying to solve these problems?",
+                "I want to know more about my future."
+            ],
+            "keywords": ["personal negetive", "family", "problems", "future"]
+
+        },
+        "actions-personal-asertive":{
+            "sentences":[
+                "I cant decide what to do?",
+                "What do I do?",
+                "Should I go outside or keep working on the computer?"
+            ],
+            "keywords": ["personal asertive", "cant decide", "what do I do", "go outside", "keep working on the computer"]
+
+        },
+        "self-awareness":{
+            "sentences":[
+                "you",
+                "youre ?",
+                "yourself ?"
+            ],
+            "keywords": ["personal"]
+
+        }
+    } 
+]

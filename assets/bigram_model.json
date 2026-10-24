@@ -1,0 +1,56 @@
+[
+  {
+    "sentence": "Hows my favorite robot?",
+    "contentType": "happy-positive",
+    "type": "interrogative",
+    "currentSet": "1"
+  },
+  {
+    "sentence": "I love you.",
+    "contentType": "happy-positive",
+    "type": "declarative",
+    "currentSet": "2"
+  },
+  {
+    "sentence": "Youre the best.",
+    "contentType": "happy-positive",
+    "type": "declarative",
+    "currentSet": "3"
+  },
+  {
+    "sentence": "Hows my robot.",
+    "contentType": "happy-negetive",
+    "type": "declarative",
+    "currentSet": "1"
+  },
+  {
+    "sentence": "Whats this robot up to.",
+    "contentType": "happy-negetive",
+    "type": "declarative",
+    "currentSet": "2"
+  },
+  {
+    "sentence": "whats this robot do?",
+    "contentType": "happy-negetive",
+    "type": "interrogative",
+    "currentSet": "3"
+  },
+  {
+    "sentence": "Dance",
+    "contentType": "happy-asertive",
+    "type": "declarative",
+    "currentSet": "1"
+  },
+  {
+    "sentence": "Go to your charging station.",
+    "contentType": "happy-asertive",
+    "type": "declarative",
+    "currentSet": "2"
+  },
+  {
+    "sentence": "Shut down all trash compactors on the detention level",
+    "contentType": "happy-asertive",
+    "type": "declarative",
+    "currentSet": "3"
+  }
+]
