@@ -6,11 +6,9 @@ const { spawn } = require('child_process');
 const bodyParser = require('body-parser');
 const { createResponce, adjacentWord, trainModel } = require("../controller.js");
 const control = require("../controller.js");
-const dataModel = require('../models/data.js')
 
 const { get } = require('https');
 const { send } = require('process');
-const { Query } = require('mongoose');
 
 
 const router = express.Router();

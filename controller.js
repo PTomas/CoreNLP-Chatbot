@@ -1,9 +1,6 @@
 const { Properties, Pipeline, ConnectorServer } = require('corenlp');
 const sentiment = require('corenlp-sentiment')
 const CoreNLP = require('corenlp')
-const mongoose = require('mongoose');
-const dataModel = require('./models/data.js')
-const collection = require('./index.js');
 const { response } = require('express');
 const axios = require("axios");
 const fs = require("fs");
