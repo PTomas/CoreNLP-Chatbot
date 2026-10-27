@@ -81,6 +81,9 @@ router.get('/answers', async function (req, res) {
   // let myAnswer = await dataModel.findOne({Query: getResponce}).sort({_id : -1}).limit(1).skip(1).select('Responce')
   
   const queryData = await createResponce(getResponce)//analyze question
+  if(!queryData || !queryData.length){//sentiment server unreachable or returned nothing
+    return res.json({data: ["I can't reach my language server right now."], score: 0, timer: 0})
+  }
 
   const [reply, sentArr] = await adjacentWord(queryData, getResponce)//respond to complex question
 

@@ -126,11 +126,13 @@ async function apiRequest2(word, callback){
 // }
 
 /************************************************************** */
+const SENTIMENT_URL = process.env.SENTIMENT_URL || 'http://localhost:7000/sentiment';
+
 async function createResponce(getResponce, ansQuest) {//corenlp
   var result = [];
   var apostrophe = ["dont", "didnt", "wont"];
   if(getResponce){
-    await axios.get('http://localhost:7000/sentiment', {
+    await axios.get(SENTIMENT_URL, {
       params: {
           text: getResponce
       }
@@ -143,7 +145,7 @@ async function createResponce(getResponce, ansQuest) {//corenlp
       });
       return result;
   }else if(ansQuest){
-    await axios.get('http://localhost:7000/sentiment', {
+    await axios.get(SENTIMENT_URL, {
       params: {
           text: ansQuest
       }
