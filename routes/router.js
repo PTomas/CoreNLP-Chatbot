@@ -20,7 +20,7 @@ router.use(bodyParser.urlencoded({ extended: true }))
 
 let getResponce
 
-const PIPER = path.join(__dirname, '../piper/piper.exe');
+const PIPER = path.join(__dirname, '../piper', process.platform === 'win32' ? 'piper.exe' : 'piper');
 const MODEL = path.join(__dirname, '../en_US-amy-medium.onnx');
 
 function synthesize(text, outFile) {
