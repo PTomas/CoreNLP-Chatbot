@@ -376,6 +376,11 @@ function trainModel(reply, sentArr) {
           "How is it supposed to work?",
           "Whats not working with it?"
         ];
+        else if (contentType === "actions-verbs") followups = [
+          "I am programed for conversation and advise.",
+          "Im here for you if you want to talk.",
+          "Hello, I can help you plan your day, remind you to stay positive, and be your friend if you need to talk."
+        ];
         else if (contentType === "actions-think") followups = [
           "Patick is good.",
           "Patrick never did anything wrong.",
@@ -395,11 +400,6 @@ function trainModel(reply, sentArr) {
           'Oh, hello who is this?',
           'Oh, hi doing anything new?',
           'Hey, do I know you?'
-        ];
-        else if (contentType === "greetings-asertive") followups = [
-          "I am programed for conversation and advise.",
-          "Im here for you if you want to talk.",
-          "Hello, I can help you plan your day, remind you to stay positive, and be your friend if you need to talk."
         ];
         else if (contentType === "getting-to-know-you-positive") followups = [
           'Do you remember the video game crysis?',
@@ -494,6 +494,11 @@ function trainModel(reply, sentArr) {
           "Do you think you can make it work?",
           "Do you have time to fix it?"
         ];
+        else if (contentType === "actions-verbs") followups = [
+          "Lets make a plan for that?",
+          "I cant do that.",
+          "Youre more persuasive when talking to people on their level."
+        ];
         else if (contentType === "actions-think") followups = [
           "Rules are ment to be broken.",
           "Why would they make rules.",
@@ -502,7 +507,7 @@ function trainModel(reply, sentArr) {
         else if (contentType === "actions-nouns") followups = [
           "Thats a great idea.",
           "Do you have everything ready?",
-          "Is it close to being compleate."
+          "Let me know when youre ready."
         ];
         else if (contentType === "greetings-positive") followups = [
           'Im good, how are you?',
@@ -513,11 +518,6 @@ function trainModel(reply, sentArr) {
           'Oh, what is it?',
           'what do you want?',
           'why dont you do something differnt?'
-        ];
-        else if (contentType === "greetings-asertive") followups = [
-          "Lets make a plan for that?",
-          "I cant do that.",
-          "Youre more persuasive when talking to people on their level."
         ];
         else if (contentType === "getting-to-know-you-positive") followups = [
           'Do you think your favorite projects have changed?',
@@ -612,6 +612,11 @@ function trainModel(reply, sentArr) {
           "Id try again later.",
           "You dont have to work on it if your stuck."
         ];
+        else if (contentType === "actions-verbs") followups = [
+          "That sounds like a problem?",
+          "Have you told anyone else?",
+          "Are you going to do anything about that?"
+        ];
         else if (contentType === "actions-think") followups = [
           "Yes.",
           "Yes, Patrick has made alot of progress.",
@@ -631,11 +636,6 @@ function trainModel(reply, sentArr) {
           'Oh, thats too bad.',
           'I\'m sorry about that.',
           'Im really sorry to hear that.'
-        ];
-        else if (contentType === "greetings-asertive") followups = [
-          "That sounds like a problem?",
-          "Have you told anyone else?",
-          "Are you going to do anything about that?"
         ];
         else if (contentType === "getting-to-know-you-positive") followups = [
           'what has been the highlight of your week so far?',
@@ -696,6 +696,9 @@ function trainModel(reply, sentArr) {
         reply = followups[2];
       }
     }
+    // edit3 = whatYourGoodAt(myVariable, contentType, reply);
+    // console.log("APPEND:" + edit3)//log the results of the training
+
     edit2 = influenceDecision(myVariable, contentType, sentArr, reply);
     console.log("APPEND:" + edit2)//log the results of the training
 
@@ -712,6 +715,10 @@ function trainModel(reply, sentArr) {
       reply = `${reply} ${edit2}`;
     }
 
+    // if(edit3){
+    //   reply = `${reply} ${edit3}`;
+    // }
+
     console.log(retry)
     if(retry && !newTopicCreate){
       reply = `You already asked that. ${reply}`;
@@ -719,20 +726,12 @@ function trainModel(reply, sentArr) {
 
     return [reply, timer, botScore];
 }
+/**************************************************************/
+//Ask what your good at then do all of them
 
+function whatYourGoodAt(myVariable, contentType, reply){
 
-
-
-// click handling decision making
-// left.addEventListener('click', () => {
-//   if (!inFollowup) showFollowup("left");
-//   else nextQuestion();
-// });
-
-// right.addEventListener('click', () => {
-//   if (!inFollowup) showFollowup("right");
-//   else nextQuestion();
-// });
+}
 
 
 
@@ -785,17 +784,16 @@ function influenceDecision(myVariable, contentType, sentArr, reply){
   var jsonData = fs.readFileSync("./assets/aggrigatedinfluence.json", "utf8");
   const cognitionData = JSON.parse(jsonData);
   const words = myVariable.toLowerCase().split(" ");
+  const padded = " " + words.join(" ") + " "; // lets multi-word keywords match as whole phrases
   console.log(ICounter)
 
   var totalCognition = [];
   //get the target key and use it to get sent data
   var closestKey
   Object.entries(cognitionData[0]).forEach(([key, entry]) => {
-    if(key === contentType){
-      if(key.split("-").some(k => words.includes(k.toLowerCase()))){
-        closestKey = key;
-      }
-    }else if(entry.keywords.some(k => words.includes(k.toLowerCase()))){
+    const nameMatch = key === contentType && key.split("-").some(k => words.includes(k.toLowerCase()));
+    const keywordMatch = entry.keywords.some(k => padded.includes(" " + k.toLowerCase() + " "));
+    if(nameMatch || keywordMatch){
       closestKey = key;
     }
   })
@@ -882,19 +880,17 @@ function influenceDecision(myVariable, contentType, sentArr, reply){
     ICounter = 2;
   }
 
-  if(count > 1){//match multi-word keywords
-    DEF.filter(phrase => myVariable.includes(phrase)).forEach(item => {
-      if(item.includes("robot") || item.includes("rocket") || item.includes("chair")){
-        decision = item;
-      }
-    })
+  //match multi-word keywords, preferring the longest (most specific) phrase
+  const phrases = DEF.filter(phrase => phrase.includes(" ") && padded.includes(" " + phrase.toLowerCase() + " "));
+  if(phrases.length){
+    decision = phrases.reduce((a, b) => b.length > a.length ? b : a);
     ICounter = 2;
   }
 
   console.log(count)  
   //contentType preferences 
   var index = DEF.indexOf(decision);
-  console.log(DEF3, decision)
+  console.log("this line works"+DEF3, decision)
   if(DEF[0].includes("positive") || DEF[0].includes("negetive") || DEF[0].includes("asertive")){
     DEF.slice(0,1)
   }
@@ -927,6 +923,52 @@ function influenceDecision(myVariable, contentType, sentArr, reply){
     DEF.slice(index, 1)
     var rand = Math.floor(Math.random() * DEF.length);
     totalCognition.push("When you " + decision + " you can be" + DEF[0]);
+  }else if(DEF3 === "actions-nouns-places"){
+    if(ICounter === 1){
+      if(DEF.includes(decision) && decision !== "should"){
+        cognitionResult = "helpfull"
+        let joined =DEF.slice(2, DEF.length-1).join(", ");
+        totalCognition.push("You should deffinatly go to " + decision + ". " + decision + " is a good place.");
+      }else if(DEF.includes(decision) && decision === "should"){
+        cognitionResult = "helpfull"
+        let joined =DEF.slice(2, DEF.length).join(", ");
+        totalCognition.push("Here are some places you usually go. " + joined);
+      }
+    }else if(ICounter >= 2){
+      if(DEF.includes(decision) && decision !== "should"){
+        cognitionResult = "helpfull"
+        let joined =DEF.slice(2, DEF.length-1).join(", ");
+        totalCognition.push("You should deffinatly go to " + decision + ". " + decision + " is a good place.");
+      }else if(DEF.includes(decision) && decision === "should"){
+        cognitionResult = "helpfull"
+        let joined =DEF.slice(2, DEF.length).join(", ");
+        totalCognition.push("Here are some places you usually go." + joined);
+      }else{
+        cognitionResult = "helpfull"
+        let joined =DEF.slice(2, DEF.length-1).join(", ");
+        totalCognition.push("Ok try telling me a bit more like where you want to go so I can help.");
+      }
+    }else if(ICounter === 3){
+      cognitionResult = "helpfull"
+      let joined =DEF.slice(2, DEF.length-1).join(", ");
+      totalCognition.push("Where are you trying to go?");
+    }
+  }else if(DEF3 === "actions-verbs"){
+    if(ICounter >= 1){
+      if(decision === "what do" || decision === "what can"){
+        cognitionResult = "helpfull"
+        let joined =DEF.slice(2, DEF.length-1).join(", ");
+        totalCognition.push("For starters, you can ask 'help me build a robot?' or say 'Can you tell me what you think about rules?' or even 'tell me where I should go?'");
+      }
+    }else if(ICounter === 2){
+      cognitionResult = "helpfull"
+      let joined =DEF.slice(2, DEF.length-1).join(", ");
+      totalCognition.push("Ok try telling me a bit more like what the project is so I can help.");
+    }else if(ICounter === 3){
+      cognitionResult = "helpfull"
+      let joined =DEF.slice(2, DEF.length-1).join(", ");
+      totalCognition.push("What are you trying to make?");
+    }
   }else if(DEF3 === "actions-nouns-make"){
     if(ICounter === 1){
       cognitionResult = "helpfull"
@@ -1085,8 +1127,8 @@ function create(testOptions, myVariable) {
   let primaryContent = []
   let score;
 
-  if(testOptions.length >= 2){// if > 2 contentType stored
-    primaryContent = testOptions.slice(-2);
+  if(testOptions.length >= 3){// if > 2 contentType stored
+    primaryContent = testOptions.slice(-3);
     console.log(primaryContent)
     transitionData.forEach(item => {// if all primaryContents match the model
       if(primaryContent.every((m, i) => item.models[i] === m)){
@@ -1518,6 +1560,18 @@ async function adjacentWord(queryData, getResponce){
           resultArray.push(typeGroups);
           console.log(`POSS: ${val}`);
           // usedWordsIndex.push(index);
+        }else if(countOccurrences(actions, sentInput[index]) === 1 && countOccurrences(whpns, sentInput[index]) === 1){// should be what the sentence is asking/gist failsafe for dictionary
+          const val = sentInput[index].toLowerCase().split(" ");
+          const mood = sentiments[index].split(" ");
+          const POS = Array4[index].split(" ");
+          if(val[0] === "go" && val[1] === "where"){
+            var typeGroups = new typeGroup(5, val[1], dependencies[index], mood, POS, "actions-nouns");
+          }else{
+            var typeGroups = new typeGroup(5, val[1], dependencies[index], mood, POS);
+          }
+          resultArray.push(typeGroups);
+          console.log(`POSS: ${val}`);
+          // usedWordsIndex.push(index);
         }else{
           const val = sentInput[index].toLowerCase().split(" ");
           const mood = sentiments[index].split(" ");
@@ -1635,7 +1689,7 @@ async function adjacentWord(queryData, getResponce){
           }else if(val[0] === "do" && val[1] === "i"){
             var typeGroups = new typeGroup(10 , val[1], dependencies[index], mood, POS, "getting-to-know-you-positive");
           }else if(val[0] === "do" && val[1] === "you"){
-            var typeGroups = new typeGroup(10 , val[1], dependencies[index], mood, POS, "greetings-asertive");
+            var typeGroups = new typeGroup(10 , val[1], dependencies[index], mood, POS, "actions-verbs");
           }else{
             var typeGroups = new typeGroup(4, val[1], dependencies[index], mood, POS);
           }
@@ -1854,6 +1908,8 @@ async function adjacentWord(queryData, getResponce){
           const POS = Array4[index].split(" ");
           if(val[0] === "think"){
             var typeGroups = new typeGroup(10, val[0], dependencies[index], mood, POS, "actions-think");
+          }else if(val[0] === "going"){
+            var typeGroups = new typeGroup(10, val[0], dependencies[index], mood, POS, "actions-nouns");
           }else{
             var typeGroups = new typeGroup(10, val[0], dependencies[index], mood, POS);
           }
@@ -2096,7 +2152,11 @@ async function adjacentWord(queryData, getResponce){
           const val = sentInput[index].toLowerCase().split(" ");
           const mood = sentiments[index].split(" ");
           const POS = Array4[index].split(" ");
-          var typeGroups = new typeGroup(5, val, dependencies[index], mood, POS);
+          if((val[0] === "do" && val[1] === "what")){
+            var typeGroups = new typeGroup(5, val, dependencies[index], mood, POS, "actions-verbs");
+          }else{
+            var typeGroups = new typeGroup(5, val, dependencies[index], mood, POS);
+          }
           resultArray.push(typeGroups);
           console.log(`EXEPTION: ${val}`);
           usedWordsIndex.push(index);

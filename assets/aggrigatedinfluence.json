@@ -16,14 +16,13 @@
           ],
           "keywords": ["positive", "working out", "happy", "going well"]
         },
-        "greetings-asertive":{
+        "greetings-deep":{
             "sentences":[
-                "What can you do?",
                 "I want to get better at life.",
                 "I want to know how to fix my life.",
                 "do you you think I can still make a better life?"
             ],
-        "keywords": ["asertive", "what can you do", "get better", "fix my life", "make a better life"]
+        "keywords": ["asertive", "grow", "get better", "fix my life", "make a better life"]
 
         }, 
         "getting-to-know-you-positive":{
@@ -91,7 +90,7 @@
                 "I want to watch a movie",
                 "Thinking about movies"
             ],
-        "keywords": ["movie", "movies", "good", "favorite", "what"]
+        "keywords": ["movie", "movies", "good", "favorite"]
 
         },
         "actions-nouns-talk-superior":{
@@ -116,13 +115,24 @@
         },
         "actions-nouns-places": {
             "sentences":[
-                "Im going to the Park",
-                "Im going to the hangout with my Sister",
-                "Im going to the DisnyLand",
-                "Im going to the the Beach",
-                "Im going to the my Grandpas house"
+                "Im going to the park",
+                "Im going to hangout with my sister",
+                "Im going to disnyLand",
+                "Im going to the beach",
+                "Im going to my grandpas house",
+                "Im going to hangout",
+                "Where should I go?"
             ],
-        "keywords": ["places", "park", "hangout", "sister", "disneyland", "beach", "grandpas house"]
+        "keywords": ["should", "places", "park", "hangout", "sister", "disneyland", "the beach", "grandpas house"]
+        },
+        "actions-verbs": {
+            "sentences":[
+                "What can you do?",
+                "Can you ask to help build a robot?",
+                "Can tell me what you think about rules?",
+                "Can you tell me where I should go?"
+            ],
+        "keywords": ["what do", "what can", "ask"]
         },
         "actions-personal-negetive":{
             "sentences":[

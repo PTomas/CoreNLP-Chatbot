@@ -125,21 +125,21 @@
     "actions-assertive-positive": [
       {
         "sentence": "I will",
-        "contentType": "actions-personal-negetive",
+        "contentType": "actions-assertive-positive",
         "type": "declarative",
         "currentSet": "1",
         "score": 10
       },
       {
         "sentence": "I guess I could try that.",
-        "contentType": "actions-personal-negetive",
+        "contentType": "actions-assertive-positive",
         "type": "declarative",
         "currentSet": "2",
         "score": 5
       },
       {
         "sentence": "How should I?",
-        "contentType": "actions-personal-negetive",
+        "contentType": "actions-assertive-positive",
         "type": "interrogative",
         "currentSet": "3",
         "score": 1
@@ -148,21 +148,28 @@
     "actions-hobbies-positive": [
       {
         "sentence": "It works.",
-        "contentType": "actions-hobbies-negetive",
+        "contentType": "actions-hobbies-positive",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 1
+      },
+      {
+        "sentence": "You can come with me now.",
+        "contentType": "actions-hobbies-positive",
         "type": "declarative",
         "currentSet": "1",
         "score": 1
       },
       {
         "sentence": "Its supposed to",
-        "contentType": "actions-hobbies-negetive",
+        "contentType": "actions-hobbies-positive",
         "type": "interrogative",
         "currentSet": "2",
         "score": 5
       },
       {
         "sentence": "Should I keep trying to fix it?",
-        "contentType": "actions-hobbies-negetive",
+        "contentType": "actions-hobbies-positive",
         "type": "interrogative",
         "currentSet": "3",
         "score": 10
@@ -187,6 +194,36 @@
         "sentence": "Should I keep trying to fix it?",
         "contentType": "actions-hobbies-negetive",
         "type": "interrogative",
+        "currentSet": "3",
+        "score": 10
+      }
+    ],
+    "actions-verbs": [
+      {
+        "sentence": "what are you good at?",
+        "contentType": "actions-verbs",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 5
+      },
+      {
+        "sentence": "what can I ask you?",
+        "contentType": "actions-verbs",
+        "type": "declarative",
+        "currentSet": "1",
+        "score": 5
+      },
+      {
+        "sentence": "answer all",
+        "contentType": "actions-verbs",
+        "type": "declarative",
+        "currentSet": "2",
+        "score": 8
+      },
+      {
+        "sentence": "what makes you ",
+        "contentType": "actions-verbs",
+        "type": "declarative",
         "currentSet": "3",
         "score": 10
       }
@@ -221,13 +258,6 @@
         "score": 5
       },
       {
-        "sentence": "Thinking about a ",
-        "contentType": "actions-nouns",
-        "type": "declarative",
-        "currentSet": "3",
-        "score": 5
-      },
-      {
         "sentence": "Going to talk to ",
         "contentType": "actions-nouns",
         "type": "declarative",
@@ -238,7 +268,14 @@
         "sentence": "Im going to the ",
         "contentType": "actions-nouns",
         "type": "declarative",
-        "currentSet": "3",
+        "currentSet": "2",
+        "score": 1
+      },
+      {
+        "sentence": "Should I go to ",
+        "contentType": "actions-nouns",
+        "type": "declarative",
+        "currentSet": "2",
         "score": 1
       }
     ],
@@ -281,7 +318,7 @@
         "score": 1
       },
       {
-        "sentence": "whats Up?",
+        "sentence": "whats up?",
         "contentType": "greetings-positive",
         "type": "interrogative",
         "currentSet": "3",
